@@ -3,4 +3,6 @@
 const SOUZAS = [
   { file: "Original.jpeg", author: "matheusaudibert" },
   { file: "Souza-careca.png", author: "matheusaudibert" },
+  { file: "Souza TV.png", author: "dwego" },
+  { file: "Souza-kawaii.jpg", author: "matheusaudibert" },
 ];
