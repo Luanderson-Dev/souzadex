@@ -7,6 +7,13 @@
     return file.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").toLowerCase();
   }
 
+  // O ID do GitHub é imutável; o username pode mudar com rename da conta.
+  function avatarUrl(souza, size) {
+    return souza.authorId
+      ? "https://avatars.githubusercontent.com/u/" + souza.authorId + "?s=" + size
+      : "https://github.com/" + souza.author + ".png?size=" + size;
+  }
+
   // SOUZAS está em ordem cronológica; exibe os mais recentes primeiro.
   SOUZAS.forEach(function (souza, index) {
     var number = index + 1;
@@ -26,7 +33,7 @@
       "  </h2>" +
       '  <div class="card-authors">' +
       '    <a href="https://github.com/' + souza.author + '" target="_blank" rel="noopener" title="' + souza.author + '">' +
-      '      <img src="https://github.com/' + souza.author + '.png?size=64" alt="' + souza.author + '" width="28" height="28" loading="lazy">' +
+      '      <img src="' + avatarUrl(souza, 64) + '" alt="' + souza.author + '" width="28" height="28" loading="lazy">' +
       "    </a>" +
       "  </div>" +
       "</div>";

@@ -14,6 +14,9 @@ Para contribuir com o projeto, confira as instruções completas em [CONTRIBUTIN
 
 ## Contribuidores
 
+<a href="https://github.com/matheusaudibert/souzadex/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=matheusaudibert/souzadex" />
+</a>
 
 ## Licença
 

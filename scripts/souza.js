@@ -7,6 +7,13 @@
     return file.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").toLowerCase();
   }
 
+  // O ID do GitHub é imutável; o username pode mudar com rename da conta.
+  function avatarUrl(souza, size) {
+    return souza.authorId
+      ? "https://avatars.githubusercontent.com/u/" + souza.authorId + "?s=" + size
+      : "https://github.com/" + souza.author + ".png?size=" + size;
+  }
+
   var file = new URLSearchParams(window.location.search).get("foto");
   var index = -1;
   for (var i = 0; i < SOUZAS.length; i++) {
@@ -37,7 +44,7 @@
     "    </h1>" +
     '    <div class="card-authors">' +
     '      <a href="https://github.com/' + souza.author + '" target="_blank" rel="noopener" title="' + souza.author + '">' +
-    '        <img src="https://github.com/' + souza.author + '.png?size=96" alt="' + souza.author + '" width="36" height="36">' +
+    '        <img src="' + avatarUrl(souza, 96) + '" alt="' + souza.author + '" width="36" height="36">' +
     "      </a>" +
     "    </div>" +
     "  </div>" +
