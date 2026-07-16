@@ -419,6 +419,73 @@ a:hover {
   margin-bottom: 6px;
 }
 
+/* Ranking */
+.ranking {
+  max-width: 760px;
+  padding-bottom: 64px;
+}
+
+.ranking-title {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ranking-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.ranking-position {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-muted);
+  min-width: 24px;
+  text-align: right;
+}
+
+.ranking-item--gold .ranking-position   { color: #bf8700; }
+.ranking-item--silver .ranking-position { color: #57606a; }
+.ranking-item--bronze .ranking-position { color: #953800; }
+
+.ranking-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.ranking-name {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ranking-count {
+  font-size: 15px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
 /* Empty state */
 .empty {
   padding: 48px 0;
