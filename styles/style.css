@@ -37,7 +37,28 @@
   --text: #1f2328;
   --text-muted: #656d76;
   --link: #0969da;
+  --focus-ring: rgba(9, 105, 218, 0.15);
   --radius: 6px;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --link: #4493f8;
+  --focus-ring: rgba(68, 147, 248, 0.25);
+  color-scheme: dark;
+}
+
+:root[data-theme="dark"] .header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+:root[data-theme="dark"] .card-image:hover {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -179,6 +200,38 @@ a:hover {
   cursor: pointer;
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--link);
+  border-color: var(--link);
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
 .menu-toggle span {
   display: block;
   width: 100%;
@@ -309,7 +362,7 @@ a:hover {
 .search-control input[type="search"]:focus {
   outline: none;
   border-color: var(--link);
-  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .page-size-control {
@@ -592,6 +645,10 @@ a:hover {
 .ranking-item--gold .ranking-position   { color: #bf8700; }
 .ranking-item--silver .ranking-position { color: #57606a; }
 .ranking-item--bronze .ranking-position { color: #953800; }
+
+:root[data-theme="dark"] .ranking-item--gold .ranking-position   { color: #d29922; }
+:root[data-theme="dark"] .ranking-item--silver .ranking-position { color: #b1bac4; }
+:root[data-theme="dark"] .ranking-item--bronze .ranking-position { color: #db6d28; }
 
 .ranking-avatar {
   width: 48px;
