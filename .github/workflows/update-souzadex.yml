@@ -55,21 +55,38 @@ jobs:
         run: bash .github/scripts/generate-souzas.sh
 
       - name: Commitar e enviar mudanças
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if ! git diff --quiet souzas.json; then
-            git add souzas.json
-            git commit -m "chore: atualiza souzas.json"
-          fi
+          commit_souzas() {
+            if ! git diff --quiet souzas.json; then
+              git add souzas.json
+              git commit -m "chore: atualiza souzas.json"
+            fi
+          }
+          commit_souzas
           if [ "$(git rev-list --count origin/main..HEAD)" -eq 0 ]; then
             echo "Nada para enviar."
             exit 0
           fi
-          # Se a main avançou durante a execução, rebaseia e tenta de novo.
+          # Se a main avançou durante a execução, não adianta rebasear o commit
+          # do souzas.json (arquivo gerado = conflito garantido). Descarta o
+          # commit, rebaseia o resto e regenera sobre a main atualizada.
           for i in 1 2 3; do
             if git push; then
               exit 0
             fi
-            echo "Push rejeitado, rebaseando sobre origin/main (tentativa $i)..."
-            git pull --rebase origin main
+            echo "Push rejeitado, regenerando sobre origin/main (tentativa $i)..."
+            git fetch origin main
+            if [ "$(git log -1 --format=%s)" = "chore: atualiza souzas.json" ]; then
+              git reset --hard HEAD~1
+            fi
+            git rebase origin/main
+            bash .github/scripts/generate-souzas.sh
+            commit_souzas
+            if [ "$(git rev-list --count origin/main..HEAD)" -eq 0 ]; then
+              echo "Nada para enviar após regenerar."
+              exit 0
+            fi
           done
           git push
