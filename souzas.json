@@ -10,11 +10,6 @@
     "authorId": 97767711
   },
   {
-    "file": "souza-kawaii.jpg",
-    "author": "matheusaudibert",
-    "authorId": 85813476
-  },
-  {
     "file": "souza-minions.jpg",
     "author": "matheusaudibert",
     "authorId": 85813476
@@ -180,11 +175,6 @@
     "authorId": 138927547
   },
   {
-    "file": "souza-bebe.png",
-    "author": "matheusaudibert",
-    "authorId": 85813476
-  },
-  {
     "file": "souza-gojo.png",
     "author": "caiolucasbittencourt",
     "authorId": 204911984
@@ -203,11 +193,6 @@
     "file": "souza-lucifer.png",
     "author": "caio-andres",
     "authorId": 138927547
-  },
-  {
-    "file": "souza-velho.png",
-    "author": "jvbsz",
-    "authorId": 82910294
   },
   {
     "file": "japosouza.png",
@@ -508,5 +493,60 @@
     "file": "souza-hulk.png",
     "author": "Davi-Oliveira-Brito",
     "authorId": 104875340
+  },
+  {
+    "file": "sordo.png",
+    "author": "bykalel",
+    "authorId": 102705261
+  },
+  {
+    "file": "souza-crack.png",
+    "author": "bykalel",
+    "authorId": 102705261
+  },
+  {
+    "file": "souza-javeiro.png",
+    "author": "bykalel",
+    "authorId": 102705261
+  },
+  {
+    "file": "souza-jett.png",
+    "author": "bykalel",
+    "authorId": 102705261
+  },
+  {
+    "file": "souza-papel.png",
+    "author": "bykalel",
+    "authorId": 102705261
+  },
+  {
+    "file": "souza-sukuna.png",
+    "author": "bykalel",
+    "authorId": 102705261
+  },
+  {
+    "file": "souza-vingança.png",
+    "author": "bykalel",
+    "authorId": 102705261
+  },
+  {
+    "file": "souza-yaiba.png",
+    "author": "bykalel",
+    "authorId": 102705261
+  },
+  {
+    "file": "souzablox.png",
+    "author": "bykalel",
+    "authorId": 102705261
+  },
+  {
+    "file": "souzalien.png",
+    "author": "bykalel",
+    "authorId": 102705261
+  },
+  {
+    "file": "sujouza.png",
+    "author": "bykalel",
+    "authorId": 102705261
   }
 ]
